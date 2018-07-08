@@ -8,7 +8,8 @@ const commonConfig = merge([
         plugins: [
             new HtmlWebpackPlugin({ title: 'Webpack demo' })
         ]
-    }
+    },
+    parts.loadCSS()
 ]);
 
 const productionConfig = merge([]);
