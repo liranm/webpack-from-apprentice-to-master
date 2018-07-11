@@ -1,6 +1,22 @@
 const PurifyCSSPlugin = require('purifycss-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg)$/,
+        include,
+        exclude,
+        use: {
+          loader: 'url-loader',
+          options
+        }
+      }
+    ]
+  }
+});
+
 exports.autoprefix = () => ({
     loader: 'postcss-loader',
     options: {
