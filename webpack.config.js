@@ -14,7 +14,8 @@ const commonConfig = merge([
         plugins: [
             new HtmlWebpackPlugin({ title: 'Webpack demo' })
         ]
-    }
+    },
+    parts.loadJavascript({ include: PATHS.app })
 ]);
 
 const productionConfig = merge([

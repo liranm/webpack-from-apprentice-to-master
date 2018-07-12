@@ -1,6 +1,19 @@
 const PurifyCSSPlugin = require('purifycss-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+exports.loadJavascript = ({ include, exclude }) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+        use: 'babel-loader'
+      }
+    ]
+  }
+});
+
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
