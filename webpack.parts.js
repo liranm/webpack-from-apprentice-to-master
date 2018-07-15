@@ -1,6 +1,10 @@
 const PurifyCSSPlugin = require('purifycss-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+exports.generateSourceMaps = ({ type }) => ({
+  devtool: type
+});
+
 exports.loadJavascript = ({ include, exclude }) => ({
   module: {
     rules: [
