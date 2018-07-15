@@ -1,3 +1,5 @@
+import 'react';
+import 'react-dom';
 import 'purecss';
 import component from './component';
 import './main.css';

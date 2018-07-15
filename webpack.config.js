@@ -31,7 +31,14 @@ const productionConfig = merge([
             name: '[name].[ext]'
         }
     }),
-    parts.generateSourceMaps({ type: 'source-map' })
+    parts.generateSourceMaps({ type: 'source-map' }),
+    {
+        optimization: {
+            splitChunks: {
+                chunks: 'initial'
+            }
+        }
+    }
 ]);
 
 const developmentConfig = merge([
