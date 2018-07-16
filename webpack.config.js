@@ -6,7 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const parts = require('./webpack.parts');
 
 const PATHS = {
-    app : path.join(__dirname, 'src')
+    app : path.join(__dirname, 'src'),
+    build : path.join(__dirname, 'dist')
 };
 
 const commonConfig = merge([
@@ -19,6 +20,7 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+    parts.clean(PATHS.build),
     parts.extractCSS({ 
         use: ['css-loader', parts.autoprefix()]
     }),
@@ -38,7 +40,8 @@ const productionConfig = merge([
                 chunks: 'initial'
             }
         }
-    }
+    },
+    parts.attachRevision()
 ]);
 
 const developmentConfig = merge([
