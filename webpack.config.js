@@ -21,6 +21,13 @@ const commonConfig = merge([
 
 const productionConfig = merge([
     parts.clean(PATHS.build),
+    parts.minifyJavascript(),
+    parts.minifyCSS({ 
+        discardComments: {
+            removeAll: true
+        },
+        safe: true
+     }),
     parts.extractCSS({ 
         use: ['css-loader', parts.autoprefix()]
     }),
