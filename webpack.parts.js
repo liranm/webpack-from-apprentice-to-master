@@ -7,6 +7,16 @@ const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
+exports.setFreeVariable = (key, value) => {
+  const env = {};
+
+  env[key] = JSON.stringify(value);
+
+  return {
+    plugins: [ new webpack.DefinePlugin(env) ]
+  };
+};
+
 exports.minifyCSS = ({ options }) => ({
   plugins: [
     new OptimizeCSSAssetsPlugin({
