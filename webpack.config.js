@@ -52,8 +52,12 @@ const productionConfig = merge([
         optimization: {
             splitChunks: {
                 chunks: 'initial'
+            },
+            runtimeChunk: {
+                name: 'manifest'
             }
-        }
+        },
+        recordsPath: path.join(__dirname, 'records.json') 
     },
     parts.attachRevision()
 ]);
