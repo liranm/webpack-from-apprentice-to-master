@@ -1,7 +1,6 @@
 const path = require('path');
 const glob = require('glob');
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const parts = require('./webpack.parts');
 
@@ -12,9 +11,9 @@ const PATHS = {
 
 const commonConfig = merge([
     {
-        plugins: [
-            new HtmlWebpackPlugin({ title: 'Webpack demo' })
-        ]
+        output: {
+            publicPath : '/'
+        }
     },
     parts.loadJavascript({ include: PATHS.app }),
     parts.setFreeVariable('HELLO', 'hello from config')
@@ -79,9 +78,25 @@ const developmentConfig = merge([
 ]);
 
 module.exports = mode => {
-    if (mode === 'production') {
-        return merge(commonConfig, productionConfig, { mode });
-    }
+    const pages = [
+        parts.page({
+            title: 'Webpack demo',
+            entry: {
+                app: PATHS.app
+            },
+            chunks: [ 'app', 'manifest', 'vendor' ]
+        }),
+        parts.page({
+            title: 'Another demo',
+            path: 'another',
+            entry: {
+                another: path.join(PATHS.app, 'another.js')
+            },
+            chunks: [ 'another', 'manifest', 'vendor' ]
+        })
+    ];
 
-    return merge(commonConfig, developmentConfig, { mode });
+    const config = mode === 'production' ? productionConfig : developmentConfig;
+
+    return merge([ commonConfig, config, { mode } ].concat(pages));
 };

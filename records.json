@@ -95,7 +95,10 @@
       "node_modules/react-dom/cjs/react-dom.production.min.js": 16,
       "node_modules/react-dom/index.js": 17,
       "node_modules/react/cjs/react.production.min.js": 18,
-      "node_modules/babel-loader/lib/index.js!src/lazy.js": 19
+      "node_modules/babel-loader/lib/index.js!src/lazy.js": 19,
+      "node_modules/babel-loader/lib/index.js!src/component.js": 5,
+      "node_modules/babel-loader/lib/index.js!src/index.js 1ef0b3ea4d7ad57f839c60d527f74fcf": 20,
+      "node_modules/babel-loader/lib/index.js!src/another.js": 21
     },
     "usedIds": {
       "0": 0,
@@ -117,14 +120,19 @@
       "16": 16,
       "17": 17,
       "18": 18,
-      "19": 19
+      "19": 19,
+      "20": 20,
+      "21": 21
     }
   },
   "chunks": {
     "byName": {
       "manifest": 1,
       "vendors~main": 2,
-      "main": 3
+      "main": 3,
+      "vendors~app": 4,
+      "app": 5,
+      "another": 2
     },
     "bySource": {
       "0 node_modules/babel-loader/lib/index.js!src/component.js ./lazy": 0
@@ -133,7 +141,33 @@
       0,
       1,
       2,
-      3
+      4,
+      5
     ]
-  }
+  },
+  "html-webpack-plugin for \"another/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": 0,
+          "node_modules/webpack/buildin/global.js": 1,
+          "node_modules/lodash/lodash.js": 2,
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": 3
+        },
+        "usedIds": {
+          "0": 0,
+          "1": 1,
+          "2": 2,
+          "3": 3
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ]
 }

@@ -1,0 +1,3 @@
+/*! 7b9638d */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{20:function(n,e,t){"use strict";t.r(e);t(4),t(17),t(9);var o=t(5);t(7);console.log("bake"),document.body.appendChild(Object(o.a)())},5:function(n,e,t){"use strict";e.a=function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"hello from config",e=document.createElement("div");return e.className="pure-button",e.innerHTML=n,e.onclick=function(){t.e(0).then(t.bind(null,19)).then(function(n){e.textContent=n.default}).catch(function(n){console.error(n)})},e}},7:function(n,e,t){}},[[20,1,4]]]);
+//# sourceMappingURL=app.09bc.js.map
