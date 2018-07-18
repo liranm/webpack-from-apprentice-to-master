@@ -22,6 +22,13 @@ const commonConfig = merge([
 
 const productionConfig = merge([
     {
+        performance: {
+            hints: 'warning',
+            maxEntrypointSize: 50000,
+            maxAssetSize: 450000
+        }
+    },
+    {
         output: {
             chunkFilename: '[name].[chunkhash:4].js',
             filename: '[name].[chunkhash:4].js'
