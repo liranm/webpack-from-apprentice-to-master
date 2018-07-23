@@ -3,6 +3,7 @@
         "syntax-dynamic-import"
     ],
     "presets": [
+        "react",
         [
             "env",
             {
