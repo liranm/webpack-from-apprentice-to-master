@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --env production",
+    "build:i18n": "webpack --config webpack.i18n.js",
     "build:stats": "webpack --env production --json > stats.json",
     "build:ssr": "webpack --env --config webpack.ssr.js",
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\""
@@ -29,6 +30,7 @@
     "git-revision-webpack-plugin": "^3.0.3",
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.2.0",
+    "i18n-webpack-plugin": "^1.0.0",
     "mini-css-extract-plugin": "^0.4.1",
     "nodemon": "^1.17.5",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
